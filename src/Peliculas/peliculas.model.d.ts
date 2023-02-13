@@ -1,3 +1,5 @@
+import { actorPeliculaDTO } from "../Actores/Actores.model";
+
 export interface pelicula{
     id: number;
     titulo: string;
@@ -12,6 +14,8 @@ export interface peliculaCreacionDTO{
     poster?: File;
     posterURL?: string;
     generosIds?: number[];
+    cinesIds?: number[];
+    actores?: actorPeliculaDTO[];
 }
 
 export interface landingPageDTO {

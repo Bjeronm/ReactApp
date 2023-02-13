@@ -10,11 +10,18 @@ import { Link } from "react-router-dom";
 import SelectorMultiple, { selectorMultipleModel } from "../Utils/SelectorMultiple";
 import { generoDTO } from "../generos/generos.model";
 import { useState } from "react";
+import { cineDTO } from "../Cines/cines.model";
+import TypeAheadActores from "../Actores/TypeAheadActores";
+import { actorPeliculaDTO } from "../Actores/Actores.model";
 
 export default function FormularioPeliculas(props: formularioPeliculasProps){
 
     const [generosSeleccionados, setGenerosSeleccionados] = useState(mapear(props.generosSeleccionados));
     const [generosNoSeleccionados, setGenerosNoSeleccionados] = useState(mapear(props.generosNoSeleccionados));
+    const [cinesSeleccionados, setCinesSeleccionados] = useState(mapear(props.cinesSeleccionados));
+    const [cinesNoSeleccionados, setCinesNoSeleccionados] = useState(mapear(props.cinesNoSeleccionados));
+
+    const [actoresSeleccionados, setActoresSeleccionados] = useState<actorPeliculaDTO[]>(props.actoresSeleccionados);
 
     function mapear(arreglo: {id: number, nombre: string}[]): selectorMultipleModel[]{
         return arreglo.map(valor => {
@@ -26,7 +33,9 @@ export default function FormularioPeliculas(props: formularioPeliculasProps){
         <Formik
             initialValues={props.modelo}
             onSubmit={(valores,acciones) =>{
-                valores.generosIds = generosSeleccionados.map(valor => valor.llave)
+                valores.generosIds = generosSeleccionados.map(valor => valor.llave);
+                valores.cinesIds = cinesSeleccionados.map(valor => valor.llave)
+                valores.actores = actoresSeleccionados;
                 props.onSubmit(valores, acciones)
             }}
             validationSchema={Yup.object({
@@ -48,6 +57,38 @@ export default function FormularioPeliculas(props: formularioPeliculasProps){
                         }} 
                     />
                     </div>
+                    <div className="form-group">
+                        <label>Cines:</label>
+                        <SelectorMultiple seleccionados={cinesSeleccionados} noSeleccionados={cinesNoSeleccionados} onChange={(seleccionados, noSeleccionados) => {
+                            setCinesSeleccionados(seleccionados)
+                            setCinesNoSeleccionados(noSeleccionados);
+                        }} 
+                    />
+                    </div>
+                    <div className="form-group">
+                        <TypeAheadActores
+                            onAdd={actores => {
+                                setActoresSeleccionados(actores)
+                            }} 
+                            onRemove={actor => {
+                                const actores = actoresSeleccionados.filter(x => x !== actor);
+                                setActoresSeleccionados(actores);
+                            }}
+                            actores={actoresSeleccionados} 
+                            listadoUI={(actor: actorPeliculaDTO) => 
+                            <>
+                                {actor.nombre} / <input placeholder="Personaje" type="text" value={actor.personaje}
+                                onChange={e => {
+                                    const indice = actoresSeleccionados.findIndex(x => x.id === actor.id);
+
+                                    const actores = [...actoresSeleccionados];
+                                    actores[indice].personaje = e.currentTarget.value;
+                                    setActoresSeleccionados(actores);
+                                }}
+                                />
+                            </>}
+                        />
+                    </div>
 
                     <Button disabled={formikProps.isSubmitting} type="submit">Enviar</Button>
                     <Link className="btn btn-secondary" to="/">Cancelar</Link>
@@ -62,4 +103,7 @@ interface formularioPeliculasProps{
     onSubmit(valores: peliculaCreacionDTO, accioens: FormikHelpers<peliculaCreacionDTO>): void;
     generosSeleccionados: generoDTO[];
     generosNoSeleccionados: generoDTO[];
+    cinesSeleccionados: cineDTO[];
+    cinesNoSeleccionados: cineDTO[];
+    actoresSeleccionados: actorPeliculaDTO[];
 }
