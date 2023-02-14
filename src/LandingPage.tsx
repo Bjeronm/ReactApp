@@ -11,31 +11,31 @@ export default function LandingPage(){
         setPeliculas({
             enCartelera: [
             {
-                id: 1, titulo: 'Spider-Man: Far from home', poster: 'https://play-lh.googleusercontent.com/i0DAXWIGliyfSy6FWsbt7N_i1530o_rtkM220WgVGpRlI4OeOuIz-kL3JmZWFa3u7bjsaAfOdfUUMZSE1A'
+                id: 1, titulo: 'Spider-Man: Far from home', poster: 'https://www.elnacional.cat/uploads/s1/37/48/64/19/programador.png'
             },
             {
-                id: 2, titulo: 'Spider-Man: Far from home', poster: 'https://play-lh.googleusercontent.com/i0DAXWIGliyfSy6FWsbt7N_i1530o_rtkM220WgVGpRlI4OeOuIz-kL3JmZWFa3u7bjsaAfOdfUUMZSE1A'
+                id: 2, titulo: 'Spider-Man: Far from home', poster: 'https://www.elnacional.cat/uploads/s1/37/48/64/19/programador.png'
             },
             {
-                id: 3, titulo: 'Spider-Man: Far from home', poster: 'https://play-lh.googleusercontent.com/i0DAXWIGliyfSy6FWsbt7N_i1530o_rtkM220WgVGpRlI4OeOuIz-kL3JmZWFa3u7bjsaAfOdfUUMZSE1A'
+                id: 3, titulo: 'Spider-Man: Far from home', poster: 'https://www.elnacional.cat/uploads/s1/37/48/64/19/programador.png'
             },
             {
-                id: 4, titulo: 'Spider-Man: Far from home', poster: 'https://play-lh.googleusercontent.com/i0DAXWIGliyfSy6FWsbt7N_i1530o_rtkM220WgVGpRlI4OeOuIz-kL3JmZWFa3u7bjsaAfOdfUUMZSE1A'
+                id: 4, titulo: 'Spider-Man: Far from home', poster: 'https://www.elnacional.cat/uploads/s1/37/48/64/19/programador.png'
             }
         
             ],
             proximosEstrenos: [
             {
-                id: 5, titulo: 'Spider-Man: Far from home', poster: 'https://play-lh.googleusercontent.com/i0DAXWIGliyfSy6FWsbt7N_i1530o_rtkM220WgVGpRlI4OeOuIz-kL3JmZWFa3u7bjsaAfOdfUUMZSE1A'
+                id: 5, titulo: 'Spider-Man: Far from home', poster: 'https://www.elnacional.cat/uploads/s1/37/48/64/19/programador.png'
             },
             {
-                id: 6, titulo: 'Spider-Man: Far from home', poster: 'https://play-lh.googleusercontent.com/i0DAXWIGliyfSy6FWsbt7N_i1530o_rtkM220WgVGpRlI4OeOuIz-kL3JmZWFa3u7bjsaAfOdfUUMZSE1A'
+                id: 6, titulo: 'Spider-Man: Far from home', poster: 'https://www.elnacional.cat/uploads/s1/37/48/64/19/programador.png'
             },
             {
-                id: 7, titulo: 'Spider-Man: Far from home', poster: 'https://play-lh.googleusercontent.com/i0DAXWIGliyfSy6FWsbt7N_i1530o_rtkM220WgVGpRlI4OeOuIz-kL3JmZWFa3u7bjsaAfOdfUUMZSE1A'
+                id: 7, titulo: 'Spider-Man: Far from home', poster: 'https://www.elnacional.cat/uploads/s1/37/48/64/19/programador.png'
             },
             {
-                id: 8, titulo: 'Spider-Man: Far from home', poster: 'https://play-lh.googleusercontent.com/i0DAXWIGliyfSy6FWsbt7N_i1530o_rtkM220WgVGpRlI4OeOuIz-kL3JmZWFa3u7bjsaAfOdfUUMZSE1A'
+                id: 8, titulo: 'Spider-Man: Far from home', poster: 'https://www.elnacional.cat/uploads/s1/37/48/64/19/programador.png'
             }
             ]
         })
